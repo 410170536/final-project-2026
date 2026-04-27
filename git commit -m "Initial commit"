@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Initialize git repository if not already done
+git init
+
+# Add all files to staging
+git add .
+
+# Commit with the message "Initial commit"
+git commit -m "Initial commit"
