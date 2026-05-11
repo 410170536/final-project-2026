@@ -11,4 +11,9 @@
 
 - 陳俊良
 
+執行 Flask 專案的步驟
+pip install flask
 
+
+terminal 輸入：
+python app.py
