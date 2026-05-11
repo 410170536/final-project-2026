@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'STHeiti', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        
+        .status {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .members-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .members-list li {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            align-items: center;
+        }
+        
+        .members-list li:before {
+            content: "👤";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #999;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ project.title }}</h1>
+        
+        <div class="status">
+            專題主題：<span class="status-badge">{{ project.topic }}</span>
+        </div>
+        
+        <div class="section">
+            <h2>📋 專題說明</h2>
+            <p style="line-height: 1.6; color: #555;">
+                本專題將使用 Flask 建立一個簡易網站，展示小組的期末專題內容。
+                此為期末專題的主要頁面，將展示小組的基本資訊。
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>👥 小組成員</h2>
+            <ul class="members-list">
+                {% for member in project.members %}
+                <li>{{ member }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>期末專題 © 2026 | 使用 Flask 框架開發</p>
+        </div>
+    </div>
+</body>
+</html>
