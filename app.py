@@ -6,8 +6,7 @@ app = Flask(__name__)
 def index():
     """主路由 - 顯示專題主題和小組成員"""
     project_info = {
-        'title': '期末專題',
-        'topic': '未定',
+        'title': 'CPBL富邦悍將投手數據',
         'members': ['陳俊良']
     }
     return render_template('index.html', project=project_info)
